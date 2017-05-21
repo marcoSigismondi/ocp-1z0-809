@@ -1,3 +1,4 @@
+package cross;
 import static org.junit.Assert.assertTrue;
 
 import java.util.function.Function;
