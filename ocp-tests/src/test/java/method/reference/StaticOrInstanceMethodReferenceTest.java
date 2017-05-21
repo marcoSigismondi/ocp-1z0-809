@@ -1,6 +1,7 @@
 package method.reference;
 
 import java.util.Arrays;
+import java.util.function.Function;
 import java.util.stream.Stream;
 
 import org.junit.Test;
@@ -34,6 +35,11 @@ public class StaticOrInstanceMethodReferenceTest {
 		StaticOrInstanceMethodReference instance = new StaticOrInstanceMethodReference();
 
 		stream.forEach(instance::printInstance);
+
+		Function<Integer, Integer> negate = (i -> -i), square = (i -> i * i), negateSquare = negate.compose(square);
+		negateSquare.apply(10);
+		Function<String, String> test = (tst -> "string"), ciao = (ciaoInt -> "ciao"), ultimate = ciao.andThen(test);
+		System.out.println(ultimate.apply("cioè???"));
 
 	}
 
