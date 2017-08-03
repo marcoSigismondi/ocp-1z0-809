@@ -1,5 +1,7 @@
 package cross;
 
+import static org.junit.Assert.*;
+
 import java.util.OptionalInt;
 import java.util.stream.IntStream;
 
@@ -13,6 +15,14 @@ public class FreeTests {
 		OptionalInt result = stream.filter(input -> input == 1).max();
 		result.ifPresent(System.out::println);
 
+	}
+	
+	@Test
+	public void testInstanceOf(){
+		String s = new String("s");
+		boolean result = s instanceof Object;
+		assertTrue(result);
+		System.out.println(result);
 	}
 
 }
